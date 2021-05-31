@@ -59,3 +59,46 @@ int main()
             cout << " voce errou e usou todas as tentativas";
         }
 }
+
+//resulucao com array
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int numberP1[10], numberP2[10], index, vitorias1=0, vitorias2=0, result;
+    
+    cout << "Jogadores informem suas escolhas."<< "\n";
+    
+    for(index=0; index<=9; index++){
+        
+        cout << "RODADA No. " << index+1 << "\n";
+        
+        //jogadores escolhem os numeros da rodada
+        cout << "JOGADOR1 insira um numero: " << "\n";
+        cin >> numberP1[index];
+        
+        cout <<"JOGADOR 2 insira um numero: " << "\n";
+        cin >> numberP2[index];
+        
+        result=numberP1[index]+numberP2[index];
+        
+        //comparacao dos numeros e iteracao do placar;
+        if(result%2==0){
+            cout << "Jogador 1 Venceu!" << "\n";
+            vitorias1++;
+        } else{
+            cout << "Jogador 2 venceu!" << "\n";
+            vitorias2++;
+        }
+    }
+    
+    if(vitorias1 > vitorias2){
+        cout << "Jogador 1 venceu com um total de " << vitorias1 << " vitorias.";
+    }else{
+        cout << "jogador 2 venceu com um total de " << vitorias2 << "vitorias.";
+    }
+
+}
